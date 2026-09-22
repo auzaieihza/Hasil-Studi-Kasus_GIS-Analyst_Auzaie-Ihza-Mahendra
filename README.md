@@ -1,0 +1,1 @@
+# Hasil-Studi-Kasus_GIS-Analyst_Auzaie-Ihza-Mahendra
