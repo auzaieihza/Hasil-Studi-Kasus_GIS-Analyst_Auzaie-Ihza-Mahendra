@@ -18,14 +18,23 @@ Sesuaikan pada sel KONFIGURASI jika struktur folder berbeda.
 
 ---
 
-## Variabel
+## Variabel dan Metode
 
-**1. Tutupan Lahan 2020 & 2023**
-- Citra satelit 2020 & 2023
+**1. Tutupan Lahan Tahun 2020 & 2023**
+
+Support Vector Machine (SVM) adalah algoritma klasifikasi supervised yang bekerja dengan mencari hyperplane optimal—bidang pemisah terbaik—yang memaksimalkan jarak (margin) antara kelas-kelas dalam ruang fitur, dan pada studi ini digunakan kernel Radial Basis Function (RBF) dengan parameter C=100 dan gamma="scale" untuk memetakan data spektral citra ke ruang berdimensi lebih tinggi agar kelas yang tidak terpisah secara linear dapat dipisahkan; sebelum training, dilakukan penghitungan index keterpisahan menggunakan Jeffries-Matusita (JM) Distance, yaitu metrik statistik yang mengukur seberapa jauh dua distribusi kelas saling tumpang tindih berdasarkan rata-rata dan matriks kovarians masing-masing kelas—nilai JM berkisar 0 hingga 2, di mana nilai ≥1,90 menandakan keterpisahan sangat baik, 1,00–1,89 sedang, dan <1,00 buruk—sehingga JM Distance berfungsi sebagai quality control untuk memastikan bahwa sampel training yang dipakai benar-benar representatif dan tidak saling bercampur, karena jika dua kelas memiliki JM rendah, SVM akan kesulitan memisahkannya dan akurasi klasifikasi berpotensi rendah meskipun parameter SVM sudah dioptimalkan.
+
+**Variabel Input:**
+- Citra satelit tahun 2020
+- Citra Satelit tahun 2023
 - Training sampel
 
-**2. Prediksi Tutupan Lahan 2026**
-- Peta pemodelan tutupan lahan 2020 & 2023
+**2. Prediksi Tutupan Lahan Tahun 2026**
+
+CA-Markov adalah model prediksi perubahan tutupan lahan yang mengintegrasikan Markov Chain untuk memproyeksikan probabilitas transisi antar kelas berdasarkan perubahan historis 2020–2023 (menentukan berapa banyak piksel yang berpindah kelas), dengan Cellular Automata untuk mengalokasikan perubahan tersebut secara spasial berdasarkan keadaan sel tetangga dan kedekatan dengan piksel kelas yang sama, dalam script tersebut skor alokasi dihitung sebagai kombinasi berbobot MCE (0,4), efek ketetanggaan (0,4), dan proximity (0,2), di mana faktor pendorong berupa Jaringan Jalan dan Kemiringan Lereng berperan sebagai peta kesesuaian (MCE) yang menentukan lokasi mana yang lebih layak mengalami perubahan tertentu—misalnya Permukiman cenderung berkembang di dekat jalan dan lahan datar—sedangkan. Sementara itu faktor pembatas berupa Kawasan Lindung berperan sebagai pembatas yang melarang perubahan terjadi pada area tersebut, sehingga piksel di kawasan lindung tidak akan pernah dialokasikan ke kelas lain meskipun memiliki skor kesesuaian tinggi.
+
+**Variabel Input:**
+- Peta pemodelan tutupan lahan tahun 2020 & 2023
 - Faktor pendorong: jaringan jalan dan kemiringan lereng
 - Faktor pembatas: kawasan lindung
 
@@ -52,7 +61,7 @@ Sesuaikan pada sel KONFIGURASI jika struktur folder berbeda.
 
 ---
 
-## Ulasan Hasil
+## Hasil dan Temuan
 
 **A. Pemodelan Tutupan Lahan 2020 dan 2023**
 
