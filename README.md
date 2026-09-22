@@ -18,7 +18,7 @@ Sesuaikan pada sel KONFIGURASI jika struktur folder berbeda.
 
 ---
 
-## Variabel dan Metode
+## Metode 
 
 **1. Tutupan Lahan Tahun 2020 & 2023**
 
