@@ -33,7 +33,7 @@ Sesuaikan pada sel KONFIGURASI jika struktur folder berbeda.
 
 ## Output
 
-**1. Script Klasifikasi**
+**1. Script Klasifikasi (Folder: Output_Klasifikasi_Tutupan_Lahan_2020_dan_2023**
 | File | Isi |
 |---|---|
 | `Tutupan_Lahan_2020.tif` | Peta tutupan lahan 2020 |
@@ -41,7 +41,7 @@ Sesuaikan pada sel KONFIGURASI jika struktur folder berbeda.
 | `Legenda_Kelas.csv` | Kode & nama kelas |
 | `Hasil Validasi ... 2020/2023.xlsx` | OA, Kappa, PA/UA, confusion matrix |
 
-**2. Script Prediksi**
+**2. Script Prediksi (Folder: Output_Prediksi_Tutupan_Lahan_Tahun_2026)**
 | File | Isi |
 |---|---|
 | `Matriks_Transisi_Markov.xlsx` | Probabilitas transisi antar kelas |
